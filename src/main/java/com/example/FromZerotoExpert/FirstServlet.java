@@ -6,7 +6,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "FromZerotoExpert", value = "/FromZerotoExpert")
+// 版本更新，这个文件当做第二次打卡的副本代码，不做修改，但是修改 urlPattern的值为
+// @WebServlet(name = "FirstServlet", value = "/FromZerotoExpert_FirstServlet ")
+@WebServlet(name = "FirstServlet ", value = "/FromZerotoExpert_FirstServlet ")
 public class FirstServlet extends HttpServlet {
 //    private String message = "";
     @Override
@@ -26,6 +28,9 @@ public class FirstServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
+        Cookie cookie = new Cookie("username", "risk");
+        cookie.getName();
+        request.getSession();
 
 //        这个流不需要关闭，由 tomcat 进行管理
     }
